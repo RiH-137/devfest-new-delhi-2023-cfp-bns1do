@@ -1,0 +1,36 @@
+<h1>Devfest New Delhi 2023 Registration Form Puzzle</h1>
+
+<p>Debug the following code to get the form link:</p>
+
+<pre>
+  function encryptString(str) {
+    let encryptedStr = '';
+    for (let i = 0; i <= str.length; i++) {
+      encryptedStr += String.fromCharCode(str.charCodeAt(i) + 2);
+    }
+    return encryptedStr;
+  }
+  
+  function decryptString(str) {
+    let decryptedStr = '';
+    for (let i = 0; i < str.length; i++) {
+      decryptedStr += String.fromCharCode(
+        str.charCodeAt(i) + 2 // <-- TODO: THIS LINE CONTAINS THE ISSUE, CAN YOU FIND IT?
+      );
+    }
+    return decryptedStr;
+  }
+  
+  let encryptedUrl = `jvvru<11tcy0ikvjwdwugteqpvgpv0eqo1kcoitcycn1fgxhguv/fgnjk/42451ockp1TGCFOG0of`;
+  let decryptedUrl = decryptString(encryptedUrl + salt);
+  print decryptedUrl
+</pre>
+
+<p>
+  Once you've debugged the code, you'll get a link. Open the link and fill out
+  the form.
+</p>
+
+<div>
+  The url after decryption is: <a id="decryptedUrl" target="_blank"></a>
+</div>

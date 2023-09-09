@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+pre {
+  font-family: Consolas, monospace;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  font-family: Consolas, monospace;
+}
+
+a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
