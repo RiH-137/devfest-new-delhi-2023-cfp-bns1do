@@ -1,36 +1,46 @@
-<h1>Devfest New Delhi 2023 Registration Form Puzzle</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Devfest New Delhi 2023 Registration Form Puzzle</title>
+</head>
+<body>
+    <h1>Devfest New Delhi 2023 Registration Form Puzzle</h1>
+    <p>Debug the following code to get the form link:</p>
 
-<p>Debug the following code to get the form link:</p>
+    <pre>
+        <script>
+            // Define a Base64 decode function
+            function base64Decode(encoded) {
+                // Use atob() to decode Base64
+                return atob(encoded);
+            }
 
-<pre>
-  function encryptString(str) {
-    let encryptedStr = '';
-    for (let i = 0; i <= str.length; i++) {
-      encryptedStr += String.fromCharCode(str.charCodeAt(i) + 2);
-    }
-    return encryptedStr;
-  }
-  
-  function decryptString(str) {
-    let decryptedStr = '';
-    for (let i = 0; i < str.length; i++) {
-      decryptedStr += String.fromCharCode(
-        str.charCodeAt(i) + 2 // <-- TODO: THIS LINE CONTAINS THE ISSUE, CAN YOU FIND IT?
-      );
-    }
-    return decryptedStr;
-  }
-  
-  let encryptedUrl = `jvvru<11tcy0ikvjwdwugteqpvgpv0eqo1kcoitcycn1fgxhguv/fgnjk/42451ockp1TGCFOG0of`;
-  let decryptedUrl = decryptString(encryptedUrl + salt);
-  print decryptedUrl
-</pre>
+            function decryptString(str) {
+                let decryptedStr = '';
+                for (let i = 0; i < str.length; i++) {
+                    decryptedStr += String.fromCharCode(str.charCodeAt(i) - 2);
+                }
+                return decryptedStr;
+            }
 
-<p>
-  Once you've debugged the code, you'll get a link. Open the link and fill out
-  the form.
-</p>
+            let salt = ''; // Initialize the salt variable
 
-<div>
-  The url after decryption is: <a id="decryptedUrl" target="_blank"></a>
-</div>
+            let encryptedUrl = `jvvru<11tcy0ikvjwdwugteqpvgpv0eqo1kcoitcycn1fgxhguv/fgnjk/42451ockp1TGCFOG0of`;
+            let decryptedUrl = decryptString(encryptedUrl + salt);
+
+            // Output the decrypted URL
+            document.getElementById('decryptedUrl').href = base64Decode(decryptedUrl);
+            document.getElementById('decryptedUrl').innerText = base64Decode(decryptedUrl);
+        </script>
+    </pre>
+
+    <p>
+        Once you've debugged the code, you'll get a link. Open the link and fill out
+        the form.
+    </p>
+
+    <div>
+        The URL after decryption is: <a id="decryptedUrl" target="_blank"></a>
+    </div>
+</body>
+</html>
